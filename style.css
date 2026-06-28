@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #0a1628;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, sans-serif;
+    padding: 1rem;
+}
+
+.question {
+    width: 100%;
+    max-width: 540px;
+}
+
+#question {
+    font-size: 17px;
+    font-weight: 500;
+    color: #e8f0fe;
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
+    min-height: 52px;
+}
+
+.button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.button button {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: .85rem 1rem;
+    font-size: 14px;
+    color: #c8d8f0;
+    cursor: pointer;
+    text-align: left;
+    transition: background .15s, border-color .15s, transform .1s;
+    line-height: 1.4;
+}
+
+.button button:hover {
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.button button:active {
+    transform: scale(0.98);
+}
+
+.button button:disabled {
+    cursor: default;
+}
+
+.button button.correct {
+    background: rgba(34, 197, 94, 0.18);
+    border-color: rgba(34, 197, 94, 0.5);
+    color: #86efac;
+}
+
+.button button.wrong {
+    background: rgba(239, 68, 68, 0.18);
+    border-color: rgba(239, 68, 68, 0.5);
+    color: #fca5a5;
+}
+
+#nextBtn {
+    display: block;
+    margin: 12px auto 0;
+    background: linear-gradient(135deg, #1a56db, #3b82f6);
+    border: none;
+    border-radius: 10px;
+    padding: .7rem 2.2rem;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity .15s, transform .1s;
+    grid-column: 1 / -1;
+}
+
+#nextBtn:hover { opacity: .88; }
+#nextBtn:active { transform: scale(0.98); }
+
+.hidden { display: none !important; }
+
+.progress-wrap {
+    margin-bottom: 1.5rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.progress-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: #4a7ab5;
+}
+
+.progress-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1a56db, #3b82f6);
+    border-radius: 99px;
+    transition: width .35s ease;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.results-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #e8f0fe;
+}
+
+.chart-wrap {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.chart-wrap svg {
+    transform: rotate(-90deg);
+    transition: stroke-dasharray .6s ease;
+}
+
+.pct-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pct-num {
+    font-size: 32px;
+    font-weight: 600;
+    color: #e8f0fe;
+}
+
+.pct-sub {
+    font-size: 12px;
+    color: #4a7ab5;
+    margin-top: 2px;
+}
+
+.legend {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.leg-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #c8d8f0;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot-correct { background: #22c55e; }
+.dot-wrong   { background: #ef4444; }
+
+.counts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 280px;
+}
+
+.count-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.count-num {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.count-label {
+    font-size: 12px;
+    color: #4a7ab5;
+}
+
+.correct-card .count-num { color: #86efac; }
+.wrong-card   .count-num { color: #fca5a5; }
+
+.replay {
+    background: linear-gradient(135deg, #1a56db, #3b82f6);
+    border: none;
+    border-radius: 10px;
+    padding: .7rem 2.2rem;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity .15s;
+}
+
+.replay:hover { opacity: .88; }
